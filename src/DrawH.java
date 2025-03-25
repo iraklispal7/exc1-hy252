@@ -77,7 +77,8 @@ public class DrawH {
             if (L < 3 || L > 20) {
                 try {
                     throw new IllegalArgumentException("Error: L value must be between 3 and 20.");
-                } catch (Exception e) {
+                }
+                catch (Exception e) {
                     System.out.println("Caught exception: " + e.getMessage());
                     System.exit(0);
                 }
