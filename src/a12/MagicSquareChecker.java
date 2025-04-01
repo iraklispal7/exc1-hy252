@@ -5,7 +5,7 @@ import java.util.HashSet;
 
 public class MagicSquareChecker {
 
-    public static void main (String[] args) {
+    public void main (String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter a number between 2 and 10 to set the size of an N x N array:");
         int n = in.nextInt();
@@ -18,19 +18,7 @@ public class MagicSquareChecker {
                 matrix[i][j] = number;
             }
         }
-        for (int i = 0; i < n * 5 + n + 1; i++) {
-            System.out.print("-");
-        }
-        System.out.println();
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                System.out.print("|    " + matrix[i][j]);
-            }
-            System.out.println("|");
-        }
-        for (int i = 0; i < n * 5 + n + 1; i++) {
-            System.out.print("-");
-        }
+        printSquare(matrix);
         System.out.println();
         if(checkIsMagic(matrix)) {
             int magicNumber = getMagicNumber(matrix);
@@ -38,7 +26,7 @@ public class MagicSquareChecker {
         }
     }
 
-    private static int getMagicNumber(int[][] s) {
+    public static int getMagicNumber(int[][] s) {
         int sum = 0;
         for (int i = 0; i < s.length; i++) {
             sum += s[0][i];
@@ -46,7 +34,24 @@ public class MagicSquareChecker {
         return sum;
     }
 
-    private static boolean checkIsMagic(int[][] s) {
+    public static void printSquare(int [][] s) {
+        int n = s.length;
+        for (int i = 0; i < n * 5 + n + 1; i++) {
+            System.out.print("-");
+        }
+        System.out.println();
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print("|    " +  s[i][j]);
+            }
+            System.out.println("|");
+        }
+        for (int i = 0; i < n * 5 + n + 1; i++) {
+            System.out.print("-");
+        }
+    }
+
+    public static boolean checkIsMagic(int[][] s) {
         int n = s.length;
         if (n == 0) return false;
         int magicSum = sumOfRow(s, 0);
