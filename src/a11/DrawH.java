@@ -1,4 +1,4 @@
-package src;
+package src.a11;
 
 import java.awt.*;
 import java.awt.event.WindowAdapter;
@@ -45,7 +45,7 @@ public class DrawH {
         return tmp;
     }
 
-    static void drawHgraphics(int L) {
+    static void drawGraphics(int L) {
         Frame f = new Frame("Ζωγραφίζοντας το H") {
             @Override
             public void paint (Graphics g) {
@@ -113,7 +113,7 @@ public class DrawH {
                 }
             }
             else if (M == 'g') {
-                drawHgraphics(L);
+                drawGraphics(L);
             }
             if(M != 'w') {
                 System.out.println("Please enter a number that the value L that should be between [3,20]");
